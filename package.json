@@ -33,6 +33,9 @@
   },
   "babel": {
     "presets": ["es2015", "react"]
+  },
+  "scripts": {
+    "webpack": "node_modules/.bin/webpack",
+    "webpack:watch": "npm run webpack -- --watch"
   }
-  
 }
