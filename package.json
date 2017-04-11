@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "webpack": "node_modules/.bin/webpack",
-    "webpack:watch": "npm run webpack -- --watch"
+    "webpack:watch": "npm run webpack -- --watch",
+    "test": "mocha --compilers js:babel-core/register --recursive --require ./test/test_helper.js",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,9 @@
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "chai": "^3.5.0",
+    "chai-immutable": "^1.6.0",
+    "mocha": "^3.2.0",
     "webpack": "^2.3.3"
   },
   "babel": {
