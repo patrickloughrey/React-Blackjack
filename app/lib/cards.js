@@ -36,3 +36,12 @@ export const newDeck = () => {
     return fromJS(deck);
 
 };
+
+/* Deal cards method from end of deck (List) */
+export const deal = (deck, n) => {
+    let cardsDealt = deck.takeLast(2);
+    let newDeck = deck.skipLast(2);
+
+    return [newDeck, cardsDealt];
+    
+}
