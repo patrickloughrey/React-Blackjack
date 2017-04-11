@@ -10034,7 +10034,7 @@ exports.default = App;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.newDeck = exports.shuffle = undefined;
+exports.deal = exports.newDeck = exports.shuffle = undefined;
 
 var _immutable = __webpack_require__(99);
 
@@ -10072,6 +10072,14 @@ var newDeck = exports.newDeck = function newDeck() {
     return (0, _immutable.fromJS)(deck);
 };
 
+/* Deal cards method from end of deck (List) */
+var deal = exports.deal = function deal(deck, n) {
+    var cardsDealt = deck.takeLast(2);
+    var newDeck = deck.skipLast(2);
+
+    return [newDeck, cardsDealt];
+};
+
 /***/ }),
 /* 83 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -10105,20 +10113,21 @@ var _cards = __webpack_require__(82);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* Create a deck of cards {imported from cards} */
-
 _reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.getElementById('app'));
 
 /* We don't use const anymore because the 'deck' variable will be pointing to a new 
    immutable List rather than pointing to a single array that mutates */
+
+/* Create a deck of cards {imported from cards} */
 var deck = (0, _cards.newDeck)();
 console.log("Start deck: ");
 console.log(deck);
 
-/* takeLast() is a List method */
+/* Create a player hand */
 var playerHand = deck.takeLast(2);
 deck = deck.skipLast(2);
 
+/* Create a dealer hand */
 var dealerHand = deck.takeLast(2);
 deck = deck.skipLast(2);
 

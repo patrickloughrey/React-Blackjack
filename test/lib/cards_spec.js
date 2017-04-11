@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { List } from 'immutable';
 
-import { newDeck, deal } from '../../lib/cards';
+import { newDeck, deal } from '../../app/lib/cards';
 
 /* Write test using Mocha & Chai:
    Go to 'https://mochajs.org/' to see syntax */
@@ -19,7 +19,7 @@ describe('cards.js', () => {
 
     describe('deal()', () => {
         const deck = newDeck();
-        const n = 5;
+        const n = 2;
         const [new_deck, new_hand] = deal(deck, n);
 
         it('returns the smaller deck', () => {
