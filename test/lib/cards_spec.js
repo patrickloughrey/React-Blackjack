@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { List } from 'immutable';
 
-import { newDeck } from '../../lib/cards';
+import { newDeck, deal } from '../../lib/cards';
 
 /* Write test using Mocha & Chai:
    Go to 'https://mochajs.org/' to see syntax */
