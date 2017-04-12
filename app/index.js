@@ -28,7 +28,7 @@ const state = fromJS({
 console.log(state);
 
 ReactDOM.render(
-    <App />,
+    <App state={state}/>,
     document.getElementById('app')
 );
 
