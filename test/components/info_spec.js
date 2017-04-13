@@ -5,6 +5,7 @@ import { shallow } from 'enzyme';
 import Info from '../../app/components/info';
 
 describe('<Info />', () => {
+  
   describe('when hasStood is false, when player wishes to hit' , () => { 
       const rendered = shallow(<Info winCount={1} lossCount={2} hasStood={false} />);
 
@@ -38,6 +39,7 @@ describe('<Info />', () => {
             expect(x).to.have.attr('disabled');
         });
       });
-  })
+
+  });
 
 });
