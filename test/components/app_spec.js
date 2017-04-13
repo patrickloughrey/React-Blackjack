@@ -41,5 +41,9 @@ describe('<App />', () => {
     it('renders two <Hand /> components', () => {
         expect(rendered.find('Hand')).to.have.length(2);
     });
-    
+
+    it('passes props to <Hand />s', () => {
+        expect(rendered.find('Hand').first()).to.have.prop('cards', state.get("playerHand"));
+        expect(rendered.find('Hand').last()).to.have.prop('cards', state.get("dealerHand"));
+    })
 });
