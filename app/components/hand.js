@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from './card';
 
 export default class Hand extends React.Component {
     render() {
@@ -6,10 +7,10 @@ export default class Hand extends React.Component {
             <div className="hand">
               {/* This.props.card is a List object that contains a Map for each card. We are rendering
                   a card element for each Map -> invoke map() for each card */}
-              {this.props.card.map((card, i) => 
+              {this.props.cards.map((card, i) => 
                   <Card suit={card.get('suit')}
                         rank={card.get('rank')}
-                        key={i}
+                        key={i} />
               )}
             </div>
         );

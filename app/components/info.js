@@ -6,8 +6,7 @@ export default class Info extends React.Component {
             <div id="info">
 
               <span id="player_record">
-                Wins: {this.props('winCount')}
-                Losses: {this.props('lossCount')}
+                Wins: {this.props.winCount} Losses: {this.props.lossCount}
               </span>
 
               <span id="buttons">

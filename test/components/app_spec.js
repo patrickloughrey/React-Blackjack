@@ -22,7 +22,7 @@ const state = fromJS({
 });
 
 describe('<App />', () => {
-    const rendered = shallow(<App />);
+    const rendered = shallow(<App state={state}/>);
 
     it('renders <Info /> component', () => {
         expect(rendered.find('Info')).to.have.length(1);
