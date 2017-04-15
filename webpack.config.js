@@ -1,7 +1,11 @@
 const path = require('path');
 
 module.exports = {
-    entry: "./app/index.js",
+    "entry": [
+        'webpack-dev-server/client?http://localhost:8080',
+        'webpack/hot/only-dev-server',
+        "./app/index.js"
+    ],
     "output": {
         "path": path.join(__dirname, "build"),
         "filename": "bundle.js"
@@ -11,13 +15,20 @@ module.exports = {
         "loaders": [
             {
                 "test": /\.jsx?$/,
-                "loader": 'babel-loader',
+                "loader": 'react-hot!babel-loader',
                 "exclude": /node_modules/
             },
             {
                 "test": /\.scss$/,
-                "loaders": ["style", "css?sourceMap", "sass?sourceMap"]
+                "loaders": ["style-loader", "css-loader?sourceMap", "sass-loader?sourceMap"]
             }
         ]
-    }
+    },
+    "devServer": {
+        contentBase: './build',
+        hot: true
+    },
+    "plugins": [
+        new webpack.HotModuleReplacementPlugin()
+    ]
 };

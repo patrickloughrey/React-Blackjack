@@ -5,6 +5,9 @@ import App from './components/app';
 import { newDeck, deal } from './lib/cards';
 import { fromJS } from 'immutable';
 
+/* Import stylesheet */
+require('./css/main.scss');
+
 /* We don't use const anymore because the 'deck' variable will be pointing to a new 
    immutable List rather than pointing to a single array that mutates */
 
