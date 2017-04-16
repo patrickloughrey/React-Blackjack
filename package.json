@@ -7,7 +7,9 @@
     "webpack": "node_modules/.bin/webpack",
     "webpack:watch": "npm run webpack -- --watch",
     "test": "mocha --compilers js:babel-core/register --recursive --require ./test/test_helper.js",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "webpack-dev-server": "node_modules/.bin/webpack-dev-server",
+    "start": "npm run webpack-dev-server"
   },
   "repository": {
     "type": "git",

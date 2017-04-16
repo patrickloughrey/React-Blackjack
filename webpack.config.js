@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
     "entry": [
@@ -10,12 +11,12 @@ module.exports = {
         "path": path.join(__dirname, "build"),
         "filename": "bundle.js"
     },
-    "devtool": "source-map",
+    devtool: "source-map",
     "module": {
         "loaders": [
             {
                 "test": /\.jsx?$/,
-                "loader": 'react-hot!babel-loader',
+                "loader": 'react-hot-loader!babel-loader',
                 "exclude": /node_modules/
             },
             {
@@ -24,11 +25,11 @@ module.exports = {
             }
         ]
     },
-    "devServer": {
+    devServer: {
         contentBase: './build',
         hot: true
     },
-    "plugins": [
+    plugins: [
         new webpack.HotModuleReplacementPlugin()
-    ]
+    ] 
 };
