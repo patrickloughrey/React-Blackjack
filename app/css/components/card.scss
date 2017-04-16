@@ -1,3 +1,34 @@
 .card {
-    background-color: blanchedalmond;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 0.15em;
+    height: 150px;
+    width: 100px;
+    margin: 10px;
+    position: relative;
+    background-color: #336600;
 }
+
+.rank {
+    padding: 5px;
+    font-size: 20px;
+}
+
+.top-rank {
+    @extend .rank;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.bottom-rank {
+    @extend .rank;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.suit {
+    display: none;
+}
+
