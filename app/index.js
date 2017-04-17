@@ -17,7 +17,10 @@ let deck = newDeck();
 /* Create a player and dealer hands calling deal method that is imported*/
 let playerHand, dealerHand;
 [deck, playerHand] = deal(deck, 2);
-[deck, dealerHand] = deal(deck, 2);
+[deck, dealerHand] = deal(deck, 1); /* Dealer is only dealt one real card, dummy card is face down */
+
+/* Create dummy card */
+dealerHand = dealerHand.push(new Map());
 
 const state = fromJS({
     deck,
