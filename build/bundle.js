@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "84aeb0d64f994e2f0d60"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2671b9aae25ce152ecbf"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -7770,7 +7770,7 @@ exports = module.exports = __webpack_require__(129)(true);
 
 
 // module
-exports.push([module.i, ".card {\n  background-color: blanchedalmond; }\n", "", {"version":3,"sources":["/Users/PatrickLoughrey/Documents/RCB/React-Blackjack/app/css/components/card.scss"],"names":[],"mappings":"AAAA;EACI,iCAAgC,EACnC","file":"main.scss","sourcesContent":[".card {\n    background-color: blanchedalmond;\n}"],"sourceRoot":""}]);
+exports.push([module.i, ".card {\n  display: inline-block;\n  border: 1px solid black;\n  border-radius: 0.15em;\n  height: 150px;\n  width: 100px;\n  margin: 10px;\n  position: relative;\n  background-color: #336600; }\n  .card.face-down {\n    /* pattern from http://lea.verou.me/css3patterns/ */\n    background-color: silver;\n    background-image: radial-gradient(circle at 100% 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent), radial-gradient(circle at 0 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent), radial-gradient(circle at 50% 100%, white 10%, silver 11%, silver 23%, white 24%, white 30%, silver 31%, silver 43%, white 44%, white 50%, silver 51%, silver 63%, white 64%, white 71%, transparent 71%, transparent), radial-gradient(circle at 100% 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent), radial-gradient(circle at 0 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent);\n    background-size: 100px 50px; }\n\n.rank, .top-rank, .bottom-rank {\n  padding: 5px;\n  font-size: 20px; }\n\n.top-rank {\n  position: absolute;\n  left: 0;\n  top: 0; }\n\n.bottom-rank {\n  position: absolute;\n  bottom: 0;\n  right: 0; }\n\n.suit {\n  display: none; }\n\n.bottom-rank {\n  position: absolute;\n  bottom: 0;\n  right: 0; }\n\n.suit {\n  display: none; }\n\n.H, .D {\n  color: red;\n  border-color: red; }\n\n:after {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  font-size: 40px; }\n\n.H:after {\n  content: '\\2665'; }\n\n.D:after {\n  content: '\\2666'; }\n\n.S:after {\n  content: '\\2660'; }\n\n.C:after {\n  content: '\\2663'; }\n\n#info {\n  margin-bottom: 10px; }\n\nspan {\n  margin: 10px; }\n\nbutton {\n  margin: 0 5px; }\n\nbutton:hover {\n  cursor: pointer; }\n", "", {"version":3,"sources":["/Users/PatrickLoughrey/Documents/RCB/React-Blackjack/app/css/components/card.scss","/Users/PatrickLoughrey/Documents/RCB/React-Blackjack/app/css/components/info.scss"],"names":[],"mappings":"AAAA;EACI,sBAAqB;EACrB,wBAAuB;EACvB,sBAAqB;EACrB,cAAa;EACb,aAAY;EACZ,aAAY;EACZ,mBAAkB;EAClB,0BAAyB,EAc5B;EAtBD;IAWO,oDAAoD;IACpD,yBAAuB;IACvB,u7BAKoN;IACpN,4BAA0B,EAC7B;;AAIJ;EACI,aAAY;EACZ,gBAAe,EAClB;;AAED;EAEI,mBAAkB;EAClB,QAAO;EACP,OAAM,EACT;;AAED;EAEI,mBAAkB;EAClB,UAAS;EACT,SAAQ,EACX;;AAED;EACI,cAAa,EAChB;;AAED;EAEI,mBAAkB;EAClB,UAAS;EACT,SAAQ,EACX;;AAED;EACI,cAAa,EAChB;;AAED;EACI,WAAU;EACV,kBAAiB,EACpB;;AAED;EACI,mBAAkB;EAClB,SAAQ;EAAG,UAAS;EACpB,iCAA+B;EAC/B,gBAAe,EAClB;;AAED;EACI,iBAAgB,EACnB;;AAED;EACI,iBAAgB,EACnB;;AAED;EACI,iBAAgB,EACnB;;AAED;EACI,iBAAgB,EACnB;;ACpFD;EACE,oBAAmB,EACpB;;AAED;EACE,aAAY,EACb;;AAED;EACE,cAAa,EACd;;AAED;EACE,gBAAe,EAChB","file":"main.scss","sourcesContent":[".card {\n    display: inline-block;\n    border: 1px solid black;\n    border-radius: 0.15em;\n    height: 150px;\n    width: 100px;\n    margin: 10px;\n    position: relative;\n    background-color: #336600;\n\n    &.face-down {\n       /* pattern from http://lea.verou.me/css3patterns/ */\n       background-color:silver;\n       background-image:\n       radial-gradient(circle at 100% 150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),\n       radial-gradient(circle at 0    150%, silver 24%, white 25%, white 28%, silver 29%, silver 36%, white 36%, white 40%, transparent 40%, transparent),\n       radial-gradient(circle at 50%  100%, white 10%, silver 11%, silver 23%, white 24%, white 30%, silver 31%, silver 43%, white 44%, white 50%, silver 51%, silver 63%, white 64%, white 71%, transparent 71%, transparent),\n       radial-gradient(circle at 100% 50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent),\n       radial-gradient(circle at 0    50%, white 5%, silver 6%, silver 15%, white 16%, white 20%, silver 21%, silver 30%, white 31%, white 35%, silver 36%, silver 45%, white 46%, white 49%, transparent 50%, transparent);\n       background-size:100px 50px;\n   }\n    \n}\n\n.rank {\n    padding: 5px;\n    font-size: 20px;\n}\n\n.top-rank {\n    @extend .rank;\n    position: absolute;\n    left: 0;\n    top: 0;\n}\n\n.bottom-rank {\n    @extend .rank;\n    position: absolute;\n    bottom: 0;\n    right: 0;\n}\n\n.suit {\n    display: none;\n}\n\n.bottom-rank {\n    @extend .rank;\n    position: absolute;\n    bottom: 0;\n    right: 0;\n}\n\n.suit {\n    display: none;\n}\n\n.H, .D {\n    color: red;\n    border-color: red;\n}\n\n:after {\n    position: absolute;\n    top: 50%; left: 50%;\n    transform: translate(-50%,-50%);\n    font-size: 40px;\n}\n\n.H:after {\n    content: '\\2665';\n}\n\n.D:after {\n    content: '\\2666';\n}\n\n.S:after {\n    content: '\\2660';\n}\n\n.C:after {\n    content: '\\2663';\n}\n\n\n\n","#info {\n  margin-bottom: 10px;\n}\n\nspan {\n  margin: 10px;\n}\n\nbutton {\n  margin: 0 5px;\n}\n\nbutton:hover {\n  cursor: pointer;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -19190,13 +19190,16 @@ var _deal2 = _slicedToArray(_deal, 2);
 deck = _deal2[0];
 playerHand = _deal2[1];
 
-var _deal3 = (0, _cards.deal)(deck, 2);
+/* Dealer is only dealt one real card, dummy card is face down */
+
+/* Create dummy card */
+var _deal3 = (0, _cards.deal)(deck, 1);
 
 var _deal4 = _slicedToArray(_deal3, 2);
 
 deck = _deal4[0];
 dealerHand = _deal4[1];
-
+dealerHand = dealerHand.push(new Map());
 
 var state = (0, _immutable.fromJS)({
     deck: deck,
@@ -34272,7 +34275,7 @@ exports.default = App;
 
 /* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(29), RootInstanceProvider = __webpack_require__(30), ReactMount = __webpack_require__(21), React = __webpack_require__(10); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -34302,24 +34305,24 @@ var Card = function (_React$Component) {
     }
 
     _createClass(Card, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "div",
-                { className: "card " + this.props.suit },
+                'div',
+                { className: 'card ' + (this.props.suit ? this.props.suit : 'face-down') },
                 _react2.default.createElement(
-                    "div",
-                    { className: "top-rank" },
+                    'div',
+                    { className: 'top-rank' },
                     this.props.rank
                 ),
                 _react2.default.createElement(
-                    "div",
-                    { className: "suit" },
+                    'div',
+                    { className: 'suit' },
                     this.props.suit
                 ),
                 _react2.default.createElement(
-                    "div",
-                    { className: "bottom-rank" },
+                    'div',
+                    { className: 'bottom-rank' },
                     this.props.rank
                 )
             );
@@ -34383,6 +34386,7 @@ var Hand = function (_React$Component) {
                 this.props.cards.map(function (card, i) {
                     return _react2.default.createElement(_card2.default, { suit: card.get('suit'),
                         rank: card.get('rank'),
+                        faceDown: !(card.has('suit') && card.has('rank')),
                         key: i });
                 })
             );
@@ -34487,6 +34491,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.deal = exports.newDeck = exports.shuffle = undefined;
 
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); /* ImmutableJS provides a method named fromJS that allows us to convert nested
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            JavaScript objects and arrays into immutable Maps and Lists */
+
+
 var _immutable = __webpack_require__(80);
 
 /* We will store the deck of cards in an 'immutable' list the cards inside the
@@ -34503,8 +34511,8 @@ var shuffle = exports.shuffle = function shuffle(array) {
         array[i - 1] = array[j];
         array[j] = x;
     }
-}; /* ImmutableJS provides a method named fromJS that allows us to convert nested
-      JavaScript objects and arrays into immutable Maps and Lists */
+};
+
 var newDeck = exports.newDeck = function newDeck() {
     var ranks = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
     var suits = ['S', 'H', 'D', 'C'];
@@ -34525,10 +34533,27 @@ var newDeck = exports.newDeck = function newDeck() {
 
 /* Deal cards method from end of deck (List) */
 var deal = exports.deal = function deal(deck, n) {
-    var cardsDealt = deck.takeLast(2);
-    var newDeck = deck.skipLast(2);
+    if (n == 1) {
+        var r = Math.floor(Math.random() * deck.size);
+        var _dealtCards = new _immutable.List([deck.get(r)]);
+        var _newDeck = deck.remove(r);
+        return [_newDeck, _dealtCards];
+    }
 
-    return [newDeck, cardsDealt];
+    var dealtCards = new _immutable.List();
+    var newDeck = deck;
+
+    for (var i = 0; i < n; i++) {
+        var _deal = deal(newDeck, 1),
+            _deal2 = _slicedToArray(_deal, 2),
+            d = _deal2[0],
+            c = _deal2[1];
+
+        dealtCards = dealtCards.push(c.first());
+        newDeck = d;
+    }
+
+    return [newDeck, dealtCards];
 };
 
 /* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(31); if (makeExportsHot(module, __webpack_require__(10))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "cards.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
