@@ -30,10 +30,13 @@ describe('cards.js', () => {
             expect(new_hand.size).to.eq(n);
         });
 
-        it('puts correct cards in hand', () => {
-            for(let i = n-1; i >= 0; i--) {
-                expect(new_hand.get(i)).to.eq(deck.get(51-(n-1) + i));
+        it('does not deal the same card each time', () => {
+            const cards = [];
+            for(let i = 0; i < 10; i += 1) {
+                cards.push(deal(deck, 1)[1].first());
             }
+            const all_same = cards.reduce((prev, curr) => prev && (cards[0] == curr), true);
+            expect(all_same).to.eq(false);
         });
     });
 });
