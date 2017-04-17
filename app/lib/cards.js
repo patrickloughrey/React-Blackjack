@@ -39,9 +39,22 @@ export const newDeck = () => {
 
 /* Deal cards method from end of deck (List) */
 export const deal = (deck, n) => {
-    let cardsDealt = deck.takeLast(2);
-    let newDeck = deck.skipLast(2);
+    if(n == 1) {
+        const r = Math.floor(Math.random() * deck.size);
+        let dealtCards = new List([deck.get(r)]);
+        let newDeck = deck.remove(r);
+        return [newDeck, dealtCards];
+    }
 
-    return [newDeck, cardsDealt];
+    let dealtCards = new List();
+    let newDeck = deck;
+
+    for(let i = 0; i < n; i++) {
+        let[d, c] = deal(newDeck, 1);
+        dealtCards = dealtCards.push(c.first());
+        newDeck = d;
+    }
+
+    return [newDeck, dealtCards];
     
 }
