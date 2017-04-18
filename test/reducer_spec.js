@@ -4,10 +4,10 @@ import { expect } from 'chai';
 import reducer from '../app/reducer';
 
 describe('reducer', () => {
-    describe('SetUpGame', () => {
+    describe('SET_UP_GAME', () => {
         const action = {
-            type: 'SetUpGame'
-        };
+            type: 'SET_UP_GAME'
+        }
 
         describe('initially empty state', () => {
             const initialState = undefined;
@@ -18,7 +18,7 @@ describe('reducer', () => {
             });
 
             it('set up playerHand', () => {
-                expect(nextState.get('playerHand').size).to.eq.(2);
+                expect(nextState.get('playerHand').size).to.eq(2);
             });
 
             it('set up dealerHand', () => {
