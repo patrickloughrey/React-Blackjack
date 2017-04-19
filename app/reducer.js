@@ -7,8 +7,8 @@ const setUpGame = (currentState) => {
   let deck = newDeck();
   let playerHand, dealerHand;
 
-  [deal, playerHand] = deal(deck, 2);
-  [deal, dealerHand] = deal(deck, 1);
+  [deck, playerHand] = deal(deck, 2);
+  [deck, dealerHand] = deal(deck, 1);
 
   /* If state changes, i.e. if player "hits" */
   dealerHand = dealerHand.push(new Map());
@@ -17,7 +17,7 @@ const setUpGame = (currentState) => {
 
   const newState = new Map({ deck, playerHand, dealerHand, hasStood });
 
-  return newState;
+  return currentState.merge(newState); /* We use merge here because we want to maintain continuous access to variables like 'winCount' */
 
 };
 
@@ -25,7 +25,7 @@ export default function(currentState = new Map(), action) {
 
     switch(action.type) {
         case 'SET_UP_GAME':
-          return setUpGame();
+          return setUpGame(currentState);
     }
 
     return currentState;

@@ -31,5 +31,49 @@ describe('reducer', () => {
             })
 
         });
+
+        describe('with existing initial state', () => {
+            const initialState = new Map({'winCount': 10, 'lossCount': 7, 'deck': 'fake deck'});
+            const nextState = reducer(initialState, action);
+
+            it('adds new variables', () => {
+                expect(Array.fromt(nextState.keys())).to.include('deck', 'playerHand', 'dealerHand', 'hasStood');
+            });
+
+            it('keeps old variables', () => {
+                expect(nextState.get('winCount')).to.eq(10);
+                expect(nextState.get('lossCount')).to.eq(7);
+            });
+
+            it('overwrites old variables', () => {
+                expect(nextState.get('deck')).to.not.eq('fake deck');
+            });
+        });
+
     });
+
+    describe("SET_RECORD", () => {
+        const action = {
+            type: 'SET_RECORD',
+            wins: 3,
+            losses: 2
+        };
+
+        const initialState = new Map({'winCount': 10, 'lossCount': 7, 'deck': 'fake deck'});
+        const nextState = reducer(initialState, action);
+
+        it('sets winCount and lossCount', () => {
+            expect(nextState.get('winCount')).to.eq(3);
+            expect(nextState.get('lossCount')).to.eq(2);
+        });
+
+        it('keeps old variables', () => {
+            expect(nextState.get('deck')).to.eq('fake deck');
+        });
+    });
+    
 });
+
+
+
+
