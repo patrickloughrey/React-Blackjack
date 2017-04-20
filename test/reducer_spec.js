@@ -1,13 +1,13 @@
 import { Map } from 'immutable';
 import { expect } from 'chai';
+import { setUpGame, setRecord } from '../app/action_creator';
 
 import reducer from '../app/reducer';
 
 describe('reducer', () => {
     describe('SET_UP_GAME', () => {
-        const action = {
-            type: 'SET_UP_GAME'
-        }
+        /* Uses helper method imported from action creator */
+        const action = setUpGame();
 
         describe('initially empty state', () => {
             const initialState = undefined;
@@ -53,11 +53,8 @@ describe('reducer', () => {
     });
 
     describe("SET_RECORD", () => {
-        const action = {
-            type: 'SET_RECORD',
-            wins: 3,
-            losses: 2
-        };
+        /* Uses helper method sending it wins/losses parameters */
+        const action = setRecord(3, 2);
 
         const initialState = new Map({'winCount': 10, 'lossCount': 7, 'deck': 'fake deck'});
         const nextState = reducer(initialState, action);
@@ -71,7 +68,7 @@ describe('reducer', () => {
             expect(nextState.get('deck')).to.eq('fake deck');
         });
     });
-    
+
 });
 
 
