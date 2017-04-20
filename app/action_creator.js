@@ -1,9 +1,9 @@
 /* Helper methods that create actions instead of holding those actions in an object */
-export setUpGame() => {
+export function setUpGame() {
     return { "type": "SET_UP_GAME" };
 }
 
-export setRecord() => {
+export function setRecord(wins, losses) {
     return {
         "type": "SET_RECORD",
         wins,

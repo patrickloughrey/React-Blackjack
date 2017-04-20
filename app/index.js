@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import App from './components/app';
+import {createStore} from 'redux';
+import { Provider } from 'react-redux';
+
+import reducer from './reducer';
+import { setUpGame, setRecord } from '../app/action_creator';
+
 import { newDeck, deal } from './lib/cards';
 import { fromJS } from 'immutable';
 
 /* Import stylesheet */
 require('./css/main.scss');
+
+/* Beginning of game, set info component up */
+let store = createStore(reducer);
+store.dispatch(setUpGame());
+store.dispatch(setRecord(0, 0));
 
 /* We don't use const anymore because the 'deck' variable will be pointing to a new 
    immutable List rather than pointing to a single array that mutates */
@@ -34,7 +44,9 @@ const state = fromJS({
 console.log(state);
 
 ReactDOM.render(
-    <App state={state}/>,
+    <Provider store={store}>
+        <App state={store.getState()} />
+    </Provider>,
     document.getElementById('app')
 );
 
