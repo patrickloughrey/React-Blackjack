@@ -14,7 +14,8 @@ import { fromJS } from 'immutable';
 require('./css/main.scss');
 
 /* Beginning of game, set info component up */
-let store = createStore(reducer);
+/* Pass Redux Dev Tools to createStore() to use as middleware to access dev tools */
+let store = createStore(reducer, undefined, window.devToolsExtension ? window.devToolsExtension() : undefined);
 store.dispatch(setUpGame());
 store.dispatch(setRecord(0, 0));
 
