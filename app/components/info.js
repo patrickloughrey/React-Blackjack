@@ -1,6 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default class Info extends React.Component {
+export class Info extends React.Component {
     render() {
         return(
             <div id="info">
@@ -22,3 +23,14 @@ export default class Info extends React.Component {
         );
     }
 };
+
+function mapStateToProps(state) {
+    return {
+        winCount: state.get('winCount'),
+        lossCount: state.get('lossCount'),
+        hasStood: state.get('hasStood')
+    };
+}
+
+/* connect is part of React-Redux, it is passed a component and the component is updated automatically when any state changes */
+export const InfoContainer = connect(mapStateToProps)(Info);
