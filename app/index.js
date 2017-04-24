@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app';
+import { AppContainer } from './components/app';
 import {createStore} from 'redux';
 import { Provider } from 'react-redux';
 
@@ -46,7 +46,7 @@ console.log(state);
 
 ReactDOM.render(
     <Provider store={store}>
-        <App state={store.getState()} />
+        <AppContainer />
     </Provider>,
     document.getElementById('app')
 );
