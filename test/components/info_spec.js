@@ -8,7 +8,7 @@ import { Info } from '../../app/components/info';
 describe('<Info />', () => {
   
   describe('when hasStood is false, when player wishes to hit' , () => { 
-      const onClickHitSpy = simon.spy();
+      const onClickHitSpy = sinon.spy();
       const rendered = shallow(<Info winCount={1} 
                                 lossCount={2} 
                                 hasStood={false} 
