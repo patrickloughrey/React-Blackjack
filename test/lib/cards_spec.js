@@ -17,7 +17,7 @@ describe('cards.js', () => {
         });
     });
 
-    describe('deal()', () => {
+    describe('deal', () => {
         const deck = newDeck();
         const n = 2;
         const [new_deck, new_hand] = deal(deck, n);
@@ -30,10 +30,20 @@ describe('cards.js', () => {
             expect(new_hand.size).to.eq(n);
         });
 
-        it('does not deal the same card each time', () => {
+        it('deals the same card each time with the same seed', () => {
             const cards = [];
             for(let i = 0; i < 10; i += 1) {
-                cards.push(deal(deck, 1)[1].first());
+                cards.push(deal(deck, 1, 1)[1].first());
+            }
+            const all_same = cards.reduce( (prev, curr) => prev && (cards[0] === curr), true);
+            expect(all_same).to.eq(true);
+
+        })
+
+        it('does not deal the same card each time with different seeds', () => {
+            const cards = [];
+            for(let i = 0; i < 10; i += 1) {
+                cards.push(deal(deck, 1, i)[1].first());
             }
             const all_same = cards.reduce((prev, curr) => prev && (cards[0] == curr), true);
             expect(all_same).to.eq(false);

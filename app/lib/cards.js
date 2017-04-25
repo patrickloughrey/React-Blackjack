@@ -1,6 +1,7 @@
 /* ImmutableJS provides a method named fromJS that allows us to convert nested
    JavaScript objects and arrays into immutable Maps and Lists */
 import { fromJS, List } from 'immutable';
+import seedrandom from 'seedrandom';
 
 /* We will store the deck of cards in an 'immutable' list the cards inside the
    deck as immutable Maps */
@@ -38,9 +39,9 @@ export const newDeck = () => {
 };
 
 /* Deal cards method from end of deck (List) */
-export const deal = (deck, n) => {
+export const deal = (deck, n, seed) => {
     if(n == 1) {
-        const r = Math.floor(Math.random() * deck.size);
+        const r = Math.floor(seedrandom(seed) * deck.size);
         let dealtCards = new List([deck.get(r)]);
         let newDeck = deck.remove(r);
         return [newDeck, dealtCards];
@@ -50,11 +51,11 @@ export const deal = (deck, n) => {
     let newDeck = deck;
 
     for(let i = 0; i < n; i++) {
-        let[d, c] = deal(newDeck, 1);
+        let[d, c] = deal(newDeck, 1, seed + i);
         dealtCards = dealtCards.push(c.first());
         newDeck = d;
     }
 
     return [newDeck, dealtCards];
     
-}
+};
