@@ -30,7 +30,11 @@ const dealToPlayer = (currentState, seed) => {
     const playerHand = currentState.get('playerHand').push(newCard.get(0));
 
     return currentState.merge(new Map({ deck, playerHand }));
-}
+};
+
+const stand = (currentState) => {
+    return currentState.merge(new Map({ "hasStood": true }));
+};
 
 export default function(currentState = new Map(), action) {
 
@@ -41,6 +45,8 @@ export default function(currentState = new Map(), action) {
           return setRecord(currentState, action.wins, action.losses);
         case 'DEAL_TO_PLAYER':
           return dealToPlayer(currentState, action.seed);
+        case 'STAND':
+          return stand(currentState);
     }
 
     return currentState;
