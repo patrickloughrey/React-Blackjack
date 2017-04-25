@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { dealToPlayer } from '../../app/action_creator';
+import { dealToPlayer, stand } from '../../app/action_creator';
 
 export class Info extends React.Component {
     render() {
@@ -15,7 +15,7 @@ export class Info extends React.Component {
                     <button disabled={this.props.hasStood} onClick={this.props.onClickHit}> 
                         Hit 
                     </button>
-                    <button disabled={this.props.hasStood}> 
+                    <button disabled={this.props.hasStood} onClick={this.props.onClickStand}> 
                         Stay 
                     </button>
                 </span>
@@ -36,10 +36,13 @@ function mapStateToProps(state) {
 const mapDispatchToProps = (dispatch) => {
     return {
         onClickHit: () => {
-            dispatch(dealToPlayer())
+            dispatch(dealToPlayer());
+        },
+        onClickStand: () => {
+            dispatch(stand());
         }
-    }
-}
+    };
+};
 
 /* connect is part of React-Redux, it is passed a component and the component is updated automatically when any state changes */
 export const InfoContainer = connect(mapStateToProps, mapDispatchToProps)(Info);

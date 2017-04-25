@@ -9,10 +9,12 @@ describe('<Info />', () => {
   
   describe('when hasStood is false, when player wishes to hit' , () => { 
       const onClickHitSpy = sinon.spy();
+      const onClickStandSpy = sinon.spy();
       const rendered = shallow(<Info winCount={1} 
                                 lossCount={2} 
                                 hasStood={false} 
                                 onClickHit={onClickHitSpy} 
+                                onClickStand={onClickStandSpy}
                                 />);
 
       it('displays wins/losses record', () => {
@@ -39,6 +41,11 @@ describe('<Info />', () => {
           expect(onClickHitSpy.calledOnce).to.eq(true);
       });
 
+      it('invokes prop function when Stand is clicked', () => {
+          buttons.last().simulate('click');
+          expect(onClickStandSpy.calledOnce).to.eq(true);
+      });
+
   });
 
   describe('when hasStood is true, when player wishes to stay', () => {
@@ -52,5 +59,6 @@ describe('<Info />', () => {
       });
 
   });
+  
 
 });
