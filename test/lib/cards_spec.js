@@ -15,6 +15,13 @@ describe('cards.js', () => {
         it('the deck starts out with 52 cards', () => {
             expect(newDeck().size).to.eq(52);
         });
+        it('returns the same deck with same seed', () => {
+            expect(newDeck(1)).to.eq(newDeck(1));
+        });
+        it('returns different deck with different seeds', () => {
+            expect(newDeck(1)).not.to.eq(newDeck(2));
+        });
+
     });
 
     describe('deal', () => {

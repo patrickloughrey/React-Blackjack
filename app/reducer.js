@@ -2,13 +2,13 @@ import { Map } from 'immutable';
 import { newDeck, deal } from './lib/cards';
 
 
-const setUpGame = (currentState) => {
+const setUpGame = (currentState, seed) => {
   /* Function to set up the game by dealing cards for dealer and player */
-  let deck = newDeck();
+  let deck = newDeck(seed);
   let playerHand, dealerHand;
 
-  [deck, playerHand] = deal(deck, 2);
-  [deck, dealerHand] = deal(deck, 1);
+  [deck, playerHand] = deal(deck, 2, seed);
+  [deck, dealerHand] = deal(deck, 1, seed + 1);
 
   /* If state changes, i.e. if player "hits" */
   dealerHand = dealerHand.push(new Map());
@@ -29,7 +29,7 @@ export default function(currentState = new Map(), action) {
 
     switch(action.type) {
         case 'SET_UP_GAME':
-          return setUpGame(currentState);
+          return setUpGame(currentState, action.seed);
         case 'SET_RECORD':
           return setRecord(currentState, action.wins, action.losses);
     }

@@ -5,21 +5,21 @@ import seedrandom from 'seedrandom';
 
 /* We will store the deck of cards in an 'immutable' list the cards inside the
    deck as immutable Maps */
-export const shuffle = (array) => {
+export const shuffle = (array, seed) => {
     let i;
     let j;
     let x;
 
     /* shuffles the deck of cards */
     for(i = array.length; i; i--) {
-        j = Math.floor(Math.random() * i);
+        j = Math.floor(seedrandom(seed + i)() * i);
         x = array[i - 1];
         array[i - 1] = array[j];
         array[j] = x;
     }
 };
 
-export const newDeck = () => {
+export const newDeck = (seed) => {
     const ranks = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K'];
     const suits = ['S', 'H', 'D', 'C'];
 
@@ -32,7 +32,7 @@ export const newDeck = () => {
         });
     });
 
-    shuffle(deck);
+    shuffle(deck, seed);
 
     return fromJS(deck);
 
