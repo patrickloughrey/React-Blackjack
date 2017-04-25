@@ -41,7 +41,7 @@ export const newDeck = (seed) => {
 /* Deal cards method from end of deck (List) */
 export const deal = (deck, n, seed) => {
     if(n == 1) {
-        const r = Math.floor(seedrandom(seed) * deck.size);
+        const r = Math.floor(seedrandom(seed)() * deck.size);
         let dealtCards = new List([deck.get(r)]);
         let newDeck = deck.remove(r);
         return [newDeck, dealtCards];

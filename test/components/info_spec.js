@@ -1,13 +1,19 @@
 import React from 'react';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import sinon from 'sinon';
+import { shallow, simulate } from 'enzyme';
 
 import { Info } from '../../app/components/info';
 
 describe('<Info />', () => {
   
   describe('when hasStood is false, when player wishes to hit' , () => { 
-      const rendered = shallow(<Info winCount={1} lossCount={2} hasStood={false} />);
+      const onClickHitSpy = simon.spy();
+      const rendered = shallow(<Info winCount={1} 
+                                lossCount={2} 
+                                hasStood={false} 
+                                onClickHit={onClickHitSpy} 
+                                />);
 
       it('displays wins/losses record', () => {
         expect(rendered).to.include.text("Wins: 1");
@@ -26,6 +32,11 @@ describe('<Info />', () => {
         buttons.forEach((x) => {
             expect(x).to.not.have.attr('disabled');
         });
+      });
+
+      it('invokes prop function when Hit is clicked', () => {
+          buttons.first().simulate('click');
+          expect(onClickHitSpy.calledOnce).to.eq(true);
       });
 
   });

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { List } from 'immutable';
+import { Map, List, fromJS } from 'immutable';
 
 import { newDeck, deal } from '../../app/lib/cards';
 
