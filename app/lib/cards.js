@@ -72,9 +72,24 @@ export const rankAsNum = (rank) => {
 
 /* Helper function to calculate score */
 export const score = (cards) => {
-    return cards.reduce( (sum, card) => {
+    const aces = cards.filter((card) => card.get('rank') == 'A');
+    const nonAces = cards.filter((card) => card.get('rank') != 'A');
+
+    if(nonAces.size == 0 && aces.size == 0) {
+        return 0;
+
+    } else if(aces.size == 0) { 
+        return cards.reduce( (sum, card) => {
         return sum + rankAsNum(card.get('rank');
-    }, 0);
+      }, 0);
+
+    } else {
+        let acesAllOneScore = score(nonAces) + aces.size;
+        if(acesAllOneScore <= 11) {
+            acesAllOneScore += 10;
+        }
+        return acesAllOneScore;
+    }
 };
 
 
