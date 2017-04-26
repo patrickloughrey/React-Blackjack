@@ -1,5 +1,5 @@
 import { Map } from 'immutable';
-import { newDeck, deal } from './lib/cards';
+import { newDeck, deal, score } from './lib/cards';
 
 
 const setUpGame = (currentState, seed) => {
@@ -29,7 +29,15 @@ const dealToPlayer = (currentState, seed) => {
     const [deck, newCard] = deal(currentState.get('deck'), 1, seed);
     const playerHand = currentState.get('playerHand').push(newCard.get(0));
 
-    return currentState.merge(new Map({ deck, playerHand }));
+    let newState = new Map({ deck, playerHand });
+    const newScore = score(playerHand);
+
+    if(newScore > 21) {
+        const lossCount = currentState.get('lossCount') + 1;
+        newState = newState.set('lossCount', lossCount);
+    }
+
+    return currentState.merge(newState);
 };
 
 const stand = (currentState) => {
