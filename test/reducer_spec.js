@@ -1,4 +1,4 @@
-import { Map, List } from 'immutable';
+import { Map, List, fromJS } from 'immutable';
 import { expect } from 'chai';
 import { setUpGame, setRecord, dealToPlayer, stand } from '../app/action_creator';
 import { newDeck } from '../app/lib/cards';
@@ -81,6 +81,20 @@ describe('reducer', () => {
         it('removes one card from deck', () => {
             expect(nextState.get('deck').size).to.eq(initialState.get('deck').size - 1);
         });
+
+        describe('when player gets more than 21 points', () => {
+            const initialState = fromJS({
+                "playerHand": [{rank: 'K'}, {rank: 'Q'}],
+                "deck": fromJS([{rank: 'J'}]),
+                "lossCount": 0
+            });
+            const nextState = reducer(initialState, action);
+
+            it('increases loss count by 1', () => {
+                expect(nextState.get('lossCount')).to.eq(initialState.get('lossCount') + 1);
+            });
+        });
+        
     });
 
     describe("STAND", () => {

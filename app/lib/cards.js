@@ -80,7 +80,7 @@ export const score = (cards) => {
 
     } else if(aces.size == 0) { 
         return cards.reduce( (sum, card) => {
-        return sum + rankAsNum(card.get('rank');
+            return sum + rankAsNum(card.get('rank'));
       }, 0);
 
     } else {
