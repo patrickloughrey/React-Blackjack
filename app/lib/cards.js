@@ -59,3 +59,9 @@ export const deal = (deck, n, seed) => {
     return [newDeck, dealtCards];
     
 };
+
+export const score = (cards) => {
+    return cards.reduce( (sum, card) => {
+        return sum + card.get('rank');
+    }, 0);
+};
