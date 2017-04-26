@@ -60,8 +60,22 @@ export const deal = (deck, n, seed) => {
     
 };
 
+/* Helper function for totaling player and dealer's hands */
+export const rankAsNum = (rank) => {
+    if(rank == 'J' || rank == 'Q' || rank == 'K') {
+        return 10;
+
+    } else {
+        return rank;
+    }
+};
+
+/* Helper function to calculate score */
 export const score = (cards) => {
     return cards.reduce( (sum, card) => {
-        return sum + card.get('rank');
+        return sum + rankAsNum(card.get('rank');
     }, 0);
 };
+
+
+
