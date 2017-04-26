@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from './components/app';
-import {createStore} from 'redux';
+import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 import reducer from './reducer';
 import { setUpGame, setRecord } from '../app/action_creator';
 
 import { newDeck, deal } from './lib/cards';
-import { fromJS } from 'immutable';
+import { Map, fromJS } from 'immutable';
 
 /* Import stylesheet */
 require('./css/main.scss');

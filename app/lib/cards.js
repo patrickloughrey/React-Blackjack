@@ -41,7 +41,7 @@ export const newDeck = (seed) => {
 /* Deal cards method from end of deck (List) */
 export const deal = (deck, n, seed) => {
     if(n == 1) {
-        const r = Math.floor(seedrandom(seed) * deck.size);
+        const r = Math.floor(seedrandom(seed)() * deck.size);
         let dealtCards = new List([deck.get(r)]);
         let newDeck = deck.remove(r);
         return [newDeck, dealtCards];
@@ -59,3 +59,38 @@ export const deal = (deck, n, seed) => {
     return [newDeck, dealtCards];
     
 };
+
+/* Helper function for totaling player and dealer's hands */
+export const rankAsNum = (rank) => {
+    if(rank == 'J' || rank == 'Q' || rank == 'K') {
+        return 10;
+
+    } else {
+        return rank;
+    }
+};
+
+/* Helper function to calculate score */
+export const score = (cards) => {
+    const aces = cards.filter((card) => card.get('rank') == 'A');
+    const nonAces = cards.filter((card) => card.get('rank') != 'A');
+
+    if(nonAces.size == 0 && aces.size == 0) {
+        return 0;
+
+    } else if(aces.size == 0) { 
+        return cards.reduce( (sum, card) => {
+            return sum + rankAsNum(card.get('rank'));
+      }, 0);
+
+    } else {
+        let acesAllOneScore = score(nonAces) + aces.size;
+        if(acesAllOneScore <= 11) {
+            acesAllOneScore += 10;
+        }
+        return acesAllOneScore;
+    }
+};
+
+
+
