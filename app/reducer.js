@@ -15,8 +15,13 @@ const setUpGame = (currentState, seed) => {
 
   const hasStood = false;
 
-  const gameOver = false;
-  const playerWon = undefined;
+  let gameOver = false;
+  let playerWon = undefined;
+
+  if(score(playerHand) == 21) {
+      gameOver = true;
+      playerWon = true;
+  }
 
   const newState = new Map({ 
       deck, playerHand, 

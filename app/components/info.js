@@ -34,7 +34,8 @@ function mapStateToProps(state) {
     return {
         winCount: state.get('winCount'),
         lossCount: state.get('lossCount'),
-        hasStood: state.get('hasStood')
+        hasStood: state.get('hasStood'),
+        gameOver: state.get('gameOver')
     };
 }
 

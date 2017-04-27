@@ -2,6 +2,7 @@ import { Map, List, fromJS } from 'immutable';
 import { expect } from 'chai';
 import { setUpGame, setRecord, dealToPlayer, stand } from '../app/action_creator';
 import { newDeck } from '../app/lib/cards';
+import proxyquire from 'proxyquire';
 
 import reducer from '../app/reducer';
 
@@ -60,6 +61,21 @@ describe('reducer', () => {
             it('overwrites old variables', () => {
                 expect(nextState.get('deck')).to.not.eq('fake deck');
             });
+        });
+
+        describe('when dealth winning hand', () => {
+            const cardUtils = { };
+            const stubbedReducer = proxyquire('../app/reducer.js', {'./lib/cards': cardUtils}).default;
+            cardUtils.score = () => 21;
+
+            const initialState = undefined;
+            const nextState = stubbedReducer(initialState, action);
+
+            it('sets gameOver and playerWon', () => {
+                expect(nextState.get('gameOver')).to.eq(true);
+                expect(nextState.get('playerWon')).to.eq(true);
+            });
+
         });
 
     });
