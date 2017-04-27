@@ -48,7 +48,8 @@ describe('reducer', () => {
             it('adds new variables', () => {
                 expect(Array.fromt(nextState.keys())).to.include(
                     'deck', 'playerHand', 'dealerHand', 
-                    'hasStood', 'gameOver', 'playerWon');
+                    'hasStood', 'gameOver', 'playerWon'
+                );
             });
 
             it('keeps old variables', () => {
