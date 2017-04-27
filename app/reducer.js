@@ -41,7 +41,9 @@ const dealToPlayer = (currentState, seed) => {
 
     if(newScore > 21) {
         const lossCount = currentState.get('lossCount') + 1;
-        newState = newState.set('lossCount', lossCount);
+        const gameOver = true;
+        const playerWon = false;
+        newState = newState.merge({lossCount, gameOver, playerWon});
     }
 
     return currentState.merge(newState);

@@ -104,6 +104,12 @@ describe('reducer', () => {
             it('increases loss count by 1', () => {
                 expect(nextState.get('lossCount')).to.eq(initialState.get('lossCount') + 1);
             });
+
+            it('toggles gameOver and sets playerWon', () => {
+                expect(nextState.get('gameOver')).to.eq(true);
+                expect(nextState.get('playerWon')).to.eq(false);
+            });
+            
         });
         
     });

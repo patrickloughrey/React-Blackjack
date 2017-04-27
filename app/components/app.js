@@ -30,7 +30,9 @@ export class App extends React.Component {
 function mapStateToProps(state) {
     return {
         playerHand: state.get('playerHand'),
-        dealerHand: state.get('dealerHand')
+        dealerHand: state.get('dealerHand'),
+        gameOver: state.get('gameOver'),
+        playerWon: state.get('playerWon')
     };
 }
 
