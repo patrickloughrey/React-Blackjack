@@ -2,7 +2,7 @@ import React from 'react';
 import { InfoContainer } from './info';
 import Hand from './hand';
 import { connect } from 'react-redux';
-import { GameOverMessage } from './game_over';
+import { GameOverMessageContainer } from './game_over';
 
 export class App extends React.Component {
     render() {
@@ -10,7 +10,7 @@ export class App extends React.Component {
         let messageComponent;
 
         if(this.props.gameOver) {
-            messageComponent = <GameOverMessage win={this.props.playerWon} />;
+            messageComponent = <GameOverMessageContainer win={this.props.playerWon} />;
         }
 
         return (

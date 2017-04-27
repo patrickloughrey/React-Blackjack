@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { setUpGame } from '../action_creator';
 
 /* JSX will not let you do multiple if-else statements within the return function.
    So, we do it outside of return, save it to a variable, then pass the variable as a prop */
@@ -24,3 +26,11 @@ export class GameOverMessage extends React.Component {
         );
     }
 }
+
+function mapDispatchToProps(dispatch) {
+    return {
+        nextGame: () => dispatch(setUpGame())
+    };
+}
+
+export const GameOverMessageContainer = connect(undefined, mapDispatchToProps)(GameOverMessage);

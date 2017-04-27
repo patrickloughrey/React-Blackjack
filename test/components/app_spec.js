@@ -41,21 +41,21 @@ describe('<App />', () => {
     describe('when gameOver', () => {
         const rendered = shallow(<App gameOver={true} />);
 
-        it('renders <GameOverMessage />', () => {
-            expect(rendered.find('GameOverMessage')).to.have.length(1);
+        it('renders <GameOverMessageContainer />', () => {
+            expect(rendered.find('Connect(GameOverMessage)')).to.have.length(1);
         });
 
         describe('player won', () => {
             const rendered = shallow(<App gameOver={true} playerWon={true} />);
-            it('gives <GameOverMessage /> correct prop', () => {
-                expect(rendered.find('GameOverMessage')).to.have.prop('win', true);
+            it('gives <GameOverMessageContainer /> correct prop', () => {
+                expect(rendered.find('Connect(GameOverMessage)')).to.have.prop('win', true);
             });
         });
 
         describe('player lost', () => {
             const rendered = shallow(<App gameOver={true} playerWon={false} />);
-            it('gives <GameOverMessage /> correct prop', () => {
-                expect(rendered.find('GameOverMessage')).to.have.prop('win', false);
+            it('gives <GameOverMessageContainer /> correct prop', () => {
+                expect(rendered.find('Connect(GameOverMessage)')).to.have.prop('win', false);
             });
         });
     });
