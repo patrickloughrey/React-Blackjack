@@ -59,6 +59,17 @@ describe('<Info />', () => {
       });
 
   });
+
+  describe('when gameOver is true', () => {
+      const rendered = shallow(<Info gameOver={true} />);
+
+      it('disables hit and stand buttons', () => {
+          const buttons = rendered.find('button');
+          buttons.forEach((b) => {
+              expect(b).to.have.attr('disabled');
+          });
+      });
+  });
   
 
 });

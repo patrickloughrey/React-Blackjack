@@ -4,6 +4,11 @@ import { dealToPlayer, stand } from '../../app/action_creator';
 
 export class Info extends React.Component {
     render() {
+        /* Disable hit and stand buttons when game is over or player's stays */
+        let disableButtons = false;
+        if(this.props.hasStood || this.props.gameOver) {
+            disableButtons = true;
+        }
         return(
             <div id="info">
 
@@ -12,10 +17,10 @@ export class Info extends React.Component {
                 </span>
 
                 <span id="buttons">
-                    <button disabled={this.props.hasStood} onClick={this.props.onClickHit}> 
+                    <button disabled={disableButtons} onClick={this.props.onClickHit}> 
                         Hit 
                     </button>
-                    <button disabled={this.props.hasStood} onClick={this.props.onClickStand}> 
+                    <button disabled={disableButtons} onClick={this.props.onClickStand}> 
                         Stay 
                     </button>
                 </span>
