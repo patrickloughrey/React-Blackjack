@@ -11,7 +11,7 @@ describe('<GameOverMessage />', () => {
         const rendered = shallow(<GameOverMessage win={true} />);
 
         it('displays message', () => {
-            expect(rendered).to.include.text("You win!");
+            expect(rendered).to.include.text("You Win!");
         });
     });
 
@@ -19,7 +19,7 @@ describe('<GameOverMessage />', () => {
         const rendered = shallow(<GameOverMessage win={false} />);
 
         it('displays message', () => {
-            expect(rendered).to.include.tex("You lose");
+            expect(rendered).to.include.tex("You Lose");
         });
     });
 
