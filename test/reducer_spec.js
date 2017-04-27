@@ -63,7 +63,7 @@ describe('reducer', () => {
             });
         });
 
-        describe('when dealth winning hand', () => {
+        describe('when dealt winning hand', () => {
             const cardUtils = { };
             const stubbedReducer = proxyquire('../app/reducer.js', {'./lib/cards': cardUtils}).default;
             cardUtils.score = () => 21;
@@ -76,6 +76,9 @@ describe('reducer', () => {
                 expect(nextState.get('playerWon')).to.eq(true);
             });
 
+            it('increments winCount', () => {
+                expect(nextState.get('winCount')).to.eq(1);
+            });
         });
 
     });
