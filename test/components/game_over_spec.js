@@ -1,6 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { shallow, simulate } from 'enzyme';
+import sinon from 'sinon';
 
 import { GameOverMessage } from '../../app/components/game_over';
 
@@ -27,6 +28,16 @@ describe('<GameOverMessage />', () => {
 
         if('display message', () => {
             expect(rendered).to.include.text("Tie!");
+        });
+    });
+
+    describe('next game button', () => {
+        it('triggers callback when button is pressed', () => {
+            const nextGameSpy = sinon.spy();
+            const rendered = shallow(<GameOverMessage nextGame={nextGameSpy} />);
+
+            rendered.find('button').simulate('click');
+            expect(nextGameSpy.calledOnce).to.eq(true);
         });
     });
 
