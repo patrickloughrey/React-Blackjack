@@ -16,8 +16,9 @@ require('./css/main.scss');
 /* Beginning of game, set info component up */
 /* Pass Redux Dev Tools to createStore() to use as middleware to access dev tools */
 let store = createStore(reducer, undefined, window.devToolsExtension ? window.devToolsExtension() : undefined);
-store.dispatch(setUpGame());
 store.dispatch(setRecord(0, 0));
+store.dispatch(setUpGame());
+
 
 /* We don't use const anymore because the 'deck' variable will be pointing to a new 
    immutable List rather than pointing to a single array that mutates */
