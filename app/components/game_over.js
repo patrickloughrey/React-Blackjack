@@ -2,7 +2,7 @@ import React from 'react';
 
 /* JSX will not let you do multiple if-else statements within the return function.
    So, we do it outside of return, save it to a variable, then pass the variable as a prop */
-export default class GameOverMessage extends React.Component {
+export class GameOverMessage extends React.Component {
     render() {
         let message;
 
