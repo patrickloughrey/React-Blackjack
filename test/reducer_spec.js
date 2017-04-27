@@ -29,7 +29,15 @@ describe('reducer', () => {
 
             it('sets up hasStood', () => {
                 expect(nextState.get('hasStood')).to.eq(false);
-            })
+            });
+
+            it('sets up gameOver', () => {
+                expect(nextState.get('gameOver')).to.eq(false);
+            });
+
+            it('sets up playerWon', () => {
+                expect(nextState.get('playerWon')).to.eq(undefined);
+            });
 
         });
 
@@ -38,7 +46,9 @@ describe('reducer', () => {
             const nextState = reducer(initialState, action);
 
             it('adds new variables', () => {
-                expect(Array.fromt(nextState.keys())).to.include('deck', 'playerHand', 'dealerHand', 'hasStood');
+                expect(Array.fromt(nextState.keys())).to.include(
+                    'deck', 'playerHand', 'dealerHand', 
+                    'hasStood', 'gameOver', 'playerWon');
             });
 
             it('keeps old variables', () => {
