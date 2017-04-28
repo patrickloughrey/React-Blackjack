@@ -153,6 +153,18 @@ describe('reducer', () => {
             lossCount: 0
         });
 
+        it('removes dummy card', () => {
+            const initialState = fromJS({
+                dealerHand: [{suit: 'S', rank: 'K'}, {}]
+            });
+
+            cardUtils.score = sinon.stub();
+            cardUtils.score.returns(21);
+
+            const nextState = stubbedReducer(initialState, action);
+            expect(nextState.get('dealerHand').size).to.eq(1);
+        });
+
         it('sets hasStood to true', () => {
             cardUtils.score = sinon.stub();
             cardUtils.score.returns(21);
