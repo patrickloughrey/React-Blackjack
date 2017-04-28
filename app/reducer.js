@@ -57,8 +57,22 @@ const dealToPlayer = (currentState, seed) => {
     return currentState.merge(newState);
 };
 
-const stand = (currentState) => {
-    return currentState.merge(new Map({ "hasStood": true }));
+const stand = (currentState, seed) => {
+    let newState = new Map({"hasStood": true});
+
+    let dealerHand = currentState.get('dealerHand');
+    let deck = currentState.get('deck');
+
+    /* Most of deal functionality comes from this loop */
+    /* If dealer has a hand under 17, dealer must draw another card */
+    while(score(dealerHand) < 17) {
+        let newCards;
+        [deck, newCards] = deal(deck, 1, 1);
+        dealerHand = dealerHand.push(newCards.get(0));
+    }
+
+    newState = newState.merge({dealerHand, deck});
+    return currentState.merge(newState);
 };
 
 export default function(currentState = new Map(), action) {
@@ -71,7 +85,7 @@ export default function(currentState = new Map(), action) {
         case 'DEAL_TO_PLAYER':
           return dealToPlayer(currentState, action.seed);
         case 'STAND':
-          return stand(currentState);
+          return stand(currentState, action.seed);
     }
 
     return currentState;
