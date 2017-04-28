@@ -63,6 +63,9 @@ const stand = (currentState, seed) => {
     let dealerHand = currentState.get('dealerHand');
     let deck = currentState.get('deck');
 
+    /* Removes dummy card from dealer's hand */
+    dealerHand = dealerHand.filter((element) => element != new Map());
+
     /* Most of deal functionality comes from this loop */
     /* If dealer has a hand under 17, dealer must draw another card */
     while(score(dealerHand) < 17) {

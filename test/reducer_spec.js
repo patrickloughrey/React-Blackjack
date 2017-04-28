@@ -195,6 +195,63 @@ describe('reducer', () => {
                 expect(cardUtils.deal.calledOnce).to.eq(true);
             });
         });
+
+        describe('determining winner', () => {
+            beforeEach( () => {
+                cardUtils.score = sinon.stub();
+                cardUtils.deal = sinon.stub();
+                cardUtils.deal.returns([new List(), new List()]);
+            });
+
+            it('increments win count and sets playerWon if player wins', () => {
+                cardUtils.score.onCall(0).returns(17);
+                cardUtils.score.onCall(1).returns(20);
+                cardUtils.score.onCall(2).returns(17); /* Dealer's score, lower than player's */
+
+                const nextState = stubbedReducer(initialState, action);
+
+                expect(nextState.get('winCount')).to.eq(initialState.get('winCount') + 1);
+                expect(nextState.get('lossCount')).to.eq(initialState.get('lossCount'));
+                expect(nextState.get('playerWon')).to.eq(true);
+            });
+
+            it('increments win count and sets playerWon if dealer busts', () => {
+                cardUtils.score.onCall(0).returns(17);
+                cardUtils.score.onCall(1).returns(20);
+                cardUtils.score.onCall(2).returns(22); /* Dealer's score, bust */
+
+                const nextState = stubbedReducer(initialState, action);
+
+                expect(nextState.get('winCount')).to.eq(initialState.get('winCount') + 1);
+                expect(nextState.get('lossCount')).to.eq(initialState.get('lossCount'));
+                expect(nextState.get('playerWon')).to.eq(true);
+            });
+
+            it('does not change count if tie', () => {
+                cardUtils.score.onCall(0).returns(17);
+                cardUtils.score.onCall(1).returns(17);
+                cardUtils.score.onCall(2).returns(17); /* Dealer's score, tied player's score */
+
+                const nextState = stubbedReducer(initialState, action);
+
+                expect(nextState.get('winCount')).to.eq(initialState.get('winCount'));
+                expect(nextState.get('lossCount')).to.eq(initialState.get('lossCount'));
+                expect(nextState.get('playerWon')).to.eq(undefined);
+            });
+
+            it('increments loss count and sets playerWon if dealer wins', () => {
+                cardUtils.score.onCall(0).returns(17);
+                cardUtils.score.onCall(1).returns(20);
+                cardUtils.score.onCall(2).returns(21); /* Dealer's score, dealer wins */
+
+                const nextState = stubbedReducer(initialState, action);
+
+                expect(nextState.get('winCount')).to.eq(initialState.get('winCount'));
+                expect(nextState.get('lossCount')).to.eq(initialState.get('lossCount') + 1);
+                expect(nextState.get('playerWon')).to.eq(false);
+            });
+        });
+        
     });
 
 });
