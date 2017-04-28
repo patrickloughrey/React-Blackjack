@@ -74,7 +74,30 @@ const stand = (currentState, seed) => {
         dealerHand = dealerHand.push(newCards.get(0));
     }
 
-    newState = newState.merge({dealerHand, deck});
+    let winCount = currentState.get('winCount');
+    let lossCount = currentState.get('lossCount');
+    const playerHand = currentState.get('playerHand');
+
+    const playerScore = score(playerHand);
+    const dealerScore = score(dealerHand);
+    let playerWon = undefined;
+
+    if(playerScore > dealerScore || dealerScore > 21) {
+        winCount++;
+        playerWon = true;
+
+    } else if(dealerScore > playerScore) {
+        lossCount++;
+        playerWon = false;
+    }
+
+    const gameOver = true;
+
+    newState = newState.merge({
+        dealerHand, deck, winCount,
+        lossCount, gameOver, playerWon
+    });
+
     return currentState.merge(newState);
 };
 
