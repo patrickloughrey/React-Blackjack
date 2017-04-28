@@ -3,6 +3,7 @@ import { expect } from 'chai';
 import { setUpGame, setRecord, dealToPlayer, stand } from '../app/action_creator';
 import { newDeck } from '../app/lib/cards';
 import proxyquire from 'proxyquire';
+import sinon from 'sinon';
 
 import reducer from '../app/reducer';
 
@@ -142,11 +143,45 @@ describe('reducer', () => {
 
     describe("STAND", () => {
         const action = stand();
-        const initialState = new Map({ "hasStood": false });
-        const nextState = reducer(initialState, action);
+        const cardUtils = { };
+        const stubbedReducer = proxyquire('../app/reducer.js', {'./lib/cards': cardUtils}).default;
+
+        const initialState = new Map({
+            hasStood: false,
+            dealHand: new List(),
+            winCount: 0,
+            lossCount: 0
+        });
 
         it('sets hasStood to true', () => {
+            cardUtils.score = sinon.stub();
+            cardUtils.score.returns(21);
+
+            const nextState = stubbedReducer(initialState, action);
             expect(nextState.get('hasStood').to.eq(true));
+        });
+
+        describe('dealer drawing', () => {
+
+            beforeEach( () => {
+                cardUtils.score = sinon.stub();
+                cardUtils.deal = sinon.stub();
+                cardUtils.deal.returns([new List(), new List()]);
+            });
+
+            it('does not draw when total is > 17', () => {
+                cardUtils.score.return(18);
+                stubbedReducer(initialState, action);
+                expect(cardUtils.deal.called).to.eq(false);
+            });
+
+            it('stops drawing when total is 17', () => {
+                cardUtils.score.onCall(0).returns(10);
+                cardUtils.score.onCall(1).returns(17);
+
+                stubbedReducer(initialState, action);
+                expect(cardUtils.deal.calledOnce).to.eq(true);
+            });
         });
     });
 
