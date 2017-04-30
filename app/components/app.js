@@ -3,7 +3,7 @@ import { InfoContainer } from './info';
 import Hand from './hand';
 import { connect } from 'react-redux';
 import { GameOverMessageContainer } from './game_over';
-import $ from 'jquery';
+import jquery from 'jquery';
 
 export class App extends React.Component {
 

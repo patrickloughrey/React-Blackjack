@@ -18,7 +18,7 @@ $size: 287px;
   border-bottom-left-radius: $size * 2;
   border-bottom-right-radius: $size * 2;
   width: 100%;
-  border: 40px solid #876B4A;
+  border: 60px solid #876B4A;
   border-top: none;
   position: fixed;
   left:50%;
@@ -44,6 +44,7 @@ h2 {
 }
 
 h4 {
+  margin: 2%;
   text-align:center;
   font-family: 'PT Serif', serif;
   font-size: 18px;
