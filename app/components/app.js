@@ -25,10 +25,13 @@ export class App extends React.Component {
               <h1> BLACKJACK </h1>
               <h2> PAYS 3 TO 2 </h2>
               <h4 id="reverse-arc"> DEALER MUST STAND ON 17 AND DRAW TO 16 </h4>
+              <div id="container">
+                <div id="circle"> </div>
+                <div id="circle"> </div>
+                <div id="circle"> </div>
+              </div>
                 { messageComponent }
-                <strong> Dealer's Hand: </strong>
                 <Hand cards={this.props.dealerHand} />
-                <strong> Player's Hand: </strong>
                 <Hand cards={this.props.playerHand} />
                 <InfoContainer />
           </div>

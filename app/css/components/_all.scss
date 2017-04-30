@@ -15,14 +15,17 @@ $size: 287px;
   background: -webkit-linear-gradient(top, #006e2e 0%,#006e2e 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #006e2e 0%,#006e2e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006e2e', endColorstr='#006e2e',GradientType=0 ); /* IE6-9 */
+  background-color: #1d7300;
+  background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
   border-bottom-left-radius: $size * 2;
   border-bottom-right-radius: $size * 2;
   width: 100%;
-  border: 60px solid #876B4A;
+  border: 30px #965f00 url("https://www.transparenttextures.com/patterns/crossword.png");
   border-top: none;
   position: fixed;
   left:50%;
   transform: translateX(-50%);
+  box-shadow: 5px black;
 }
 
 h1 {
@@ -51,6 +54,30 @@ h4 {
   color: gold;
   letter-spacing: .05em;
   font-weight: lighter;
+}
+
+#container {
+  width: 100%;
+  text-align: center;
+}
+
+#circle {
+  display: inline-block;
+  border: 2px solid gold;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top:5%;
+}
+
+.hand {
+  text-align:center;
+}
+
+.info {
+  clear:both;
 }
 
 
