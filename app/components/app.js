@@ -15,13 +15,13 @@ export class App extends React.Component {
 
         return (
           <div className="app">
-              <h1> React Blackjack </h1>
-              <InfoContainer />
+              <h1> BLACKJACK </h1>
                 { messageComponent }
-                <strong> Player's Hand: </strong>
-                <Hand cards={this.props.playerHand} />
                 <strong> Dealer's Hand: </strong>
                 <Hand cards={this.props.dealerHand} />
+                <strong> Player's Hand: </strong>
+                <Hand cards={this.props.playerHand} />
+                <InfoContainer />
           </div>
         );
     }
