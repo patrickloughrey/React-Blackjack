@@ -27,6 +27,7 @@
   "homepage": "https://github.com/patrickloughrey/React-Blackjack#readme",
   "dependencies": {
     "immutable": "^3.8.1",
+    "jquery": "^3.2.1",
     "react": "^15.5.3",
     "react-dom": "^15.5.3",
     "react-redux": "^5.0.4",

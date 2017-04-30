@@ -2,7 +2,7 @@
 @import 'info';
 @import 'game_over';
 @import url("https://fonts.googleapis.com/css?family=PT+Serif|Playfair+Display");
-$size: 225px;
+$size: 287px;
 
 * {
   margin: 0 auto;
@@ -15,12 +15,10 @@ $size: 225px;
   background: -webkit-linear-gradient(top, #006e2e 0%,#006e2e 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #006e2e 0%,#006e2e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006e2e', endColorstr='#006e2e',GradientType=0 ); /* IE6-9 */
-  display: inline-block;
   border-bottom-left-radius: $size * 2;
   border-bottom-right-radius: $size * 2;
-  border-bottom-radius: 50%;
   width: 100%;
-  border: 30px solid #876B4A;
+  border: 40px solid #876B4A;
   border-top: none;
   position: fixed;
   left:50%;
@@ -35,4 +33,23 @@ h1 {
   letter-spacing: .05em;
   font-weight: lighter;
 }
+
+h2 {
+  text-align:center;
+  font-family: 'PT Serif', serif;
+  font-size: 30px;
+  color:  #eeeeee;
+  letter-spacing: .05em;
+  font-weight: lighter;
+}
+
+h4 {
+  text-align:center;
+  font-family: 'PT Serif', serif;
+  font-size: 18px;
+  color: gold;
+  letter-spacing: .05em;
+  font-weight: lighter;
+}
+
 
