@@ -20,8 +20,11 @@ $size: 225px;
   border-bottom-right-radius: $size * 2;
   border-bottom-radius: 50%;
   width: 100%;
+  border: 30px solid #876B4A;
   border-top: none;
   position: fixed;
+  left:50%;
+  transform: translateX(-50%);
 }
 
 h1 {
