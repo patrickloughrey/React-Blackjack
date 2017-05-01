@@ -85,7 +85,9 @@ html, body {
     z-index: -1;
     height: 100%;
     width: 3px;
-    background-color: #1c1c1c;
+    background: #56ab2f; /* fallback for old browsers */
+  	background: -webkit-linear-gradient(to right, #56ab2f, #a8e063); /* Chrome 10-25, Safari 5.1-6 */
+  	background: linear-gradient(to right, #56ab2f, #a8e063); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     -webkit-transition: width .2s ease-in;
       -moz-transition:  width .2s ease-in;
        -ms-transition:  width .2s ease-in;
@@ -209,16 +211,15 @@ html, body {
 .hamburger.is-open .hamb-top,
 .hamburger.is-open .hamb-middle,
 .hamburger.is-open .hamb-bottom {
+  background: #56ab2f; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #56ab2f, #a8e063); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #56ab2f, #a8e063); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   position: absolute;
   left: 0;
   height: 4px;
   width: 100%;
 }
-.hamburger.is-closed .hamb-top,
-.hamburger.is-closed .hamb-middle,
-.hamburger.is-closed .hamb-bottom {
-  background-color: #1a1a1a;
-}
+
 .hamburger.is-closed .hamb-top { 
   top: 5px; 
   -webkit-transition: all .35s ease-in-out;
@@ -240,11 +241,7 @@ html, body {
   bottom: 0;
   -webkit-transition: all .35s ease-in-out;
 }
-.hamburger.is-open .hamb-top,
-.hamburger.is-open .hamb-middle,
-.hamburger.is-open .hamb-bottom {
-  background-color: #1a1a1a;
-}
+
 .hamburger.is-open .hamb-top,
 .hamburger.is-open .hamb-bottom {
   top: 50%;
