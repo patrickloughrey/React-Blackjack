@@ -1,0 +1,85 @@
+.card {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 0.20em;
+    height: 100px;
+    width: 75px;
+    position: relative;
+    background-color: white;
+    float:center;
+    margin-left: -1em;
+    margin-right:-1em;
+
+    &.face-down {
+       /* pattern from http://lea.verou.me/css3patterns/ */
+        background-color: #000447;
+        background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+        background-size:100px 50px;
+    }
+}
+
+.rank {
+    padding: 5px;
+    font-size: 20px;
+}
+
+.top-rank {
+    @extend .rank;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.bottom-rank {
+    @extend .rank;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.suit {
+    display: none;
+}
+
+.bottom-rank {
+    @extend .rank;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.suit {
+    display: none;
+}
+
+.H, .D {
+    color: red;
+    border-color: red;
+}
+
+:after {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 40px;
+}
+
+.H:after {
+    content: '\2665';
+}
+
+.D:after {
+    content: '\2666';
+}
+
+.S:after {
+    content: '\2660';
+}
+
+.C:after {
+    content: '\2663';
+}
+
+
+
