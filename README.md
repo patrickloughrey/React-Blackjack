@@ -8,6 +8,7 @@
 - [x] Set up entire blackjack game with React.js
 - [ ] Finish styling blackjack "room"
 - [ ] Create home page & styling
+- [ ] Create Sign-Up/Log-In Forms
 - [ ] Set up server.js file 
 - [ ] Set up MongoDB schema and connection
 - [ ] Set up user authentication, mongoose middleware & sessions with Passport
