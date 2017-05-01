@@ -8,8 +8,9 @@
 - [x] Set up entire blackjack game with React.js
 - [ ] Finish styling blackjack "room"
 - [ ] Create home page & styling
-- [ ] Set up server.js file with Express & MongoDB
-- [ ] Set up user authentication, middleware & sessions with Passport
+- [ ] Set up server.js file 
+- [ ] Set up MongoDB schema and connection
+- [ ] Set up user authentication, mongoose middleware & sessions with Passport
 - [ ] Deploy to Heroku
 ## Contributors ##
 Patrick Loughrey, Andrew Federowicz, Tony Carnese
