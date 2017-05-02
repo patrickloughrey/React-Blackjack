@@ -335,6 +335,7 @@ h2 {
 .row {
 	text-align: center;
 }
+
 .btn {
 	padding-right: 3%;
 	padding-left: 3%;
@@ -352,6 +353,21 @@ h2 {
 	color: white;
 }
 
+ul {
+	list-style: none;
+	align-items: center;
+}
+
+li {
+	display: inline-block;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+img {
+	height: 45px;
+	width: 45px;
+}
 /*-------------------------------*/
 /*			Jumbotron            */
 /*-------------------------------*/
