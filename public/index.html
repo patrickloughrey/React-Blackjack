@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> BlackJack </title>
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+<div id="wrapper">
+
+	<div class="overlay"> </div>
+	<!-- Sidebar Navigation -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+		<ul class="nav sidebar-nav">
+			<li class="sidebar-brand">
+				<a href="#">
+					BlackJack
+				</a>
+			</li>
+			<li>
+				<a href="#"> Home </a>
+			</li>
+			<li>
+				<a data-toggle="modal" data-target="#myModal"> Play </a>
+			</li>
+			<li>
+				<a href="#"> Rules </a>
+			</li>
+		</ul>
+	</nav>
+	<!-- End Sidebar Nav -->
+
+	<!-- Page Content -->
+	<div id="page-content-wrapper">
+		<button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+			<span class="hamb-top"> </span>
+			<span class="hamb-middle"> </span>
+			<span class="hamb-bottom"> </span>
+		</button>
+
+		<div class="container">
+
+			<!-- Title -->
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<ul>
+						<li> <img src="./assets/img/024-spades.png" class="img-responsive"> </li>
+						<li> <h1> BlackJack </h1> </li>
+						<li> <img src="./assets/img/024-spades.png" class="img-responsive"> </li>
+					</ul>
+					<h3> The Most Authentic, Easy, and Exhilarating Casino Game </h3>
+				</div>
+			</div>
+			<!-- End of Title -->
+
+			<!-- Play Button & Modal -->
+			<div class="row">
+				<button type="button" class="btn btn-lg" data-toggle="modal" data-target="#myModal"> 
+						Play Now
+      			</button>
+
+      			<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  					<div class="modal-dialog" role="document">
+    					<div class="modal-content">
+     						 <div class="modal-header">
+        						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        						<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      						</div>
+      						<div class="modal-body">
+        						...
+      						</div>
+      						<div class="modal-footer">
+        						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        						<button type="button" class="btn btn-primary">Save changes</button>
+      						</div>
+    					</div>
+  					</div>
+				</div>
+
+			</div>
+			<!-- End of Button & Modal -->
+		</div>
+
+	</div>
+	<!-- End of Page Content -->
+
+	<!-- Rules Jumbotron -->
+	<div class="jumbotron">
+		<div class="container">
+			<h2> Rules </h2>
+		</div>
+	</div>
+	<!-- End of Jumbotron -->
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+ crossorigin="anonymous"> </script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="./assets/js/main.js"> </script>
+</body>
+
+</html>
