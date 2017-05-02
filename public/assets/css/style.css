@@ -1,3 +1,9 @@
+* {
+  transition-property: all;
+  transition-duration: .6s;
+  transition-timing-function: ease;
+}
+
 body {
 	margin: 0 auto;
 	overflow-x: hidden;
@@ -292,3 +298,63 @@ html, body {
     background-color: rgba(250,250,250,.8);
     z-index: 1;
 }
+
+/*-------------------------------*/
+/*		  Row Styling			 */
+/*-------------------------------*/
+
+#page-content-wrapper {
+	margin-bottom: 15%;
+}
+
+h1, h3 {
+	color: #56ab2f; /* fallback for old browsers */
+  	color: -webkit-linear-gradient(to right, #56ab2f, #a8e063); /* Chrome 10-25, Safari 5.1-6 */
+  	color: linear-gradient(to right, #56ab2f, #a8e063); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  	font-weight: lighter;
+  	text-align: center;
+}
+
+h1 {
+	font-size: 54px;
+}
+
+h2 {
+	text-align: center;
+	font-weight: lighter;
+	color: white;
+}
+
+/*-------------------------------*/
+/*			  Buttons            */
+/*-------------------------------*/
+
+.row {
+	text-align: center;
+}
+.btn {
+	padding-right: 3%;
+	padding-left: 3%;
+	padding-top:1%;
+	padding-bottom: 1%;
+	margin-top: 5%;
+	background: transparent;
+	border: 1px solid green;
+	color: green;
+}
+
+.btn:hover { 
+
+}
+/*-------------------------------*/
+/*			Jumbotron            */
+/*-------------------------------*/
+
+
+.jumbotron {
+  background: #56ab2f; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #56ab2f, #a8e063); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #56ab2f, #a8e063); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
