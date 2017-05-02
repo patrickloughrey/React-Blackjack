@@ -25,6 +25,9 @@ html, body {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    background: #ece9e6; /* fallback for old browsers */
+  	background: -webkit-linear-gradient(to right, #ece9e6, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+  	background: linear-gradient(to right, #ece9e6, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #wrapper.toggled {
@@ -304,7 +307,7 @@ html, body {
 /*-------------------------------*/
 
 #page-content-wrapper {
-	margin-bottom: 15%;
+	margin-bottom: 10%;
 }
 
 h1, h3 {
@@ -339,13 +342,16 @@ h2 {
 	padding-bottom: 1%;
 	margin-top: 5%;
 	background: transparent;
-	border: 1px solid green;
-	color: green;
+	border: 2px solid #56ab2f;
+	color: #56ab2f;
+	cursor: pointer;
 }
 
-.btn:hover { 
-
+.btn:hover {
+	background-color: #56ab2f;
+	color: white;
 }
+
 /*-------------------------------*/
 /*			Jumbotron            */
 /*-------------------------------*/
@@ -355,6 +361,8 @@ h2 {
   background: #56ab2f; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #56ab2f, #a8e063); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #56ab2f, #a8e063); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin: 0 auto;
+  height: 100%;
 }
 
 
