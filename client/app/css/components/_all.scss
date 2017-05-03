@@ -8,6 +8,16 @@ $size: 287px;
   margin: 0 auto;
 }
 
+body {
+background-color: #050100;
+background-image: url("https://www.transparenttextures.com/patterns/large-leather.png");
+      -webkit-box-shadow: 20px 20px 60px 10px black;
+    -moz-box-shadow: 20px 20px 60px 10px black;
+    -ms-box-shadow: 20px 20px 60px 10px black;
+    -o-box-shadow: 20px 20px 60px 10px black;
+    box-shadow: 10px 10px 60px 10px black;
+}
+
 .app { 
   background: #52c234; /* fallback for old browsers */
   background: #006e2e; /* Old browsers */
@@ -17,15 +27,19 @@ $size: 287px;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006e2e', endColorstr='#006e2e',GradientType=0 ); /* IE6-9 */
   background-color: #1d7300;
   background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
-  border-bottom-left-radius: $size * 2;
-  border-bottom-right-radius: $size * 2;
+  border-bottom-left-radius: $size * 2.5;
+  border-bottom-right-radius: $size * 2.5;
   width: 100%;
-  border: 30px #965f00 url("https://www.transparenttextures.com/patterns/crossword.png");
+  border: #6b4000 solid 85px;
   border-top: none;
   position: fixed;
   left:50%;
   transform: translateX(-50%);
-  box-shadow: 5px black;
+      -webkit-box-shadow: 20px 20px 60px 10px black;
+    -moz-box-shadow: 20px 20px 60px 10px black;
+    -ms-box-shadow: 20px 20px 60px 10px black;
+    -o-box-shadow: 20px 20px 60px 10px black;
+    box-shadow: 10px 10px 60px 10px black;
 }
 
 h1 {
