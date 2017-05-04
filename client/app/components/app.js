@@ -21,7 +21,7 @@ export class App extends React.Component {
         }
 
         return (
-          <div className="app">
+          <div className="app"> 
               <h1> BLACKJACK </h1>
               <h2> PAYS 3 TO 2 </h2>
               <h4 id="reverse-arc"> DEALER MUST STAND ON 17 AND DRAW TO 16 </h4>

@@ -2,9 +2,9 @@
     display: inline-block;
     text-align: center;
     border: 1px solid black;
-    border-radius: 0.20em;
-    height: 100px;
-    width: 75px;
+    border-radius: 0.32em;
+    height: 108px;
+    width: 80px;
     position: relative;
     background-color: white;
     float:center;
@@ -13,9 +13,9 @@
 
     &.face-down {
        /* pattern from http://lea.verou.me/css3patterns/ */
-        background-color: #000447;
-        background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
-        background-size:100px 50px;
+        background-color: #003e42;
+        background-image: url("https://www.transparenttextures.com/patterns/argyle.png");
+        background-size:70px 40px;
     }
 }
 
