@@ -28,6 +28,7 @@ html, body {
     background: #ece9e6; /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #ece9e6, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #ece9e6, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    overflow-y:hidden;
 }
 
 #wrapper.toggled {
@@ -337,15 +338,19 @@ h2 {
 }
 
 .btn {
-	padding-right: 3%;
-	padding-left: 3%;
-	padding-top:1%;
-	padding-bottom: 1%;
+	padding-right: 3.25%;
+	padding-left: 3.25%;
+	padding-top:1.25%;
+	padding-bottom: 1.25%;
 	margin-top: 5%;
 	background: transparent;
 	border: 2px solid #56ab2f;
 	color: #56ab2f;
 	cursor: pointer;
+}
+
+.btn-launch {
+  font-size: 18px;
 }
 
 .btn:hover {
@@ -381,22 +386,77 @@ li:hover {
   background: #000000; /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #000000, #0f9b0f); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #000000, #0f9b0f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  margin: 0 auto;
   height: 300px;
+  margin: 0 auto;
 }
 
 /*-------------------------------*/
 /*          Login Forms          */
 /*-------------------------------*/
 
-.modal-body .form-horizontal .col-sm-2,
-.modal-body .form-horizontal .col-sm-10 {
-    width: 100%
+.modal-body {
+  background-color:black;
 }
 
-.modal-body .form-horizontal .control-label {
-    text-align: left;
+.bt-login,.bt-login:hover, .bt-login:active, .bt-login:focus {
+    background-color: #56ab2f;
+    color: #ffffff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    transition: background-color 300ms linear 0s;
+    margin-top: 20px;
 }
-.modal-body .form-horizontal .col-sm-offset-2 {
-    margin-left: 15px;
+
+
+.login-tab {
+  margin: 0 auto;
+  max-width: 380px;
+}
+
+.login-modal-header {
+  background: #56ab2f;
+  color: #fff;
+}
+
+.login-modal-header .modal-title {
+  color: #fff;
+}
+
+.login-modal-header .close {
+  color: #fff;
+}
+
+.login-modal i {
+  color: #000;
+}
+
+.login-modal form {
+  max-width: 340px;
+}
+
+.tab-pane form {
+  margin: 0 auto;
+}
+.login-modal-footer{
+  margin-top:15%;
+  margin-bottom:8%;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #56ab2f;
+  text-decoration: none;
+}
+
+.modal-ul {
+  width:100%;
+  text-align:center;
+}
+
+#loginModalLabel {
+  text-align:center;
+  padding-top:7%;
 }
