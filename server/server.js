@@ -86,7 +86,7 @@ app.post("/signup", function(req, res) {
       res.send(error);
     }
     else {
-      res.redirect("/game");
+      res.redirect("/");
     }
   });
 });

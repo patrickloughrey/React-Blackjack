@@ -53,6 +53,6 @@ $(document).ready(function(){
 /* Slick Carousel for Rules */
 $(document).ready(function(){
     $('.your-class').slick({
-        setting-name: setting-value
+        
      });
  });
