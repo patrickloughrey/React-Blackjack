@@ -386,7 +386,6 @@ li:hover {
   background: #000000; /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #000000, #0f9b0f); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #000000, #0f9b0f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  height: 300px;
   margin: 0 auto;
 }
 
@@ -461,7 +460,35 @@ a:hover {
   padding-top:7%;
 }
 
+/*-------------------------------*/
+/*          Rules Section        */
+/*-------------------------------*/
+
 #rules {
   color: #e6e6e6;
   font-size: 48px;
 }
+
+.summary {
+  margin-top:5%;
+  color: #e6e6e6;
+}
+
+#rules-img {
+  display: inline-block;
+
+}
+
+.row > .col {
+  width: 31.25%;
+  float:right;
+  margin-top: 5%;
+  margin-right:1%;
+  margin-left:1%;
+}
+
+.jumbotron > p {
+  font-size:12px;
+}
+
+

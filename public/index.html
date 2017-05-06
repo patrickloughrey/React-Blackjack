@@ -7,9 +7,7 @@
 	<title> BlackJack </title>
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="./assets/css/style.css">
-	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
 </head>
 
 <body>
@@ -32,7 +30,10 @@
 				<a data-toggle="modal" data-target="#loginModal"> Play </a>
 			</li>
 			<li>
-				<a href="#"> Rules </a>
+				<a href="#rules"> Rules </a>
+			</li>
+			<li>
+				<a href="#"> Contributors </a>
 			</li>
 		</ul>
 	</nav>
@@ -219,31 +220,47 @@
 </div> <!-- End of Wrapper -->
 
 	<!-- Rules Jumbotron -->
+<section id="rules">
 	<div class="jumbotron">
 		<div class="container">
 			<h1 id="rules"> Rules </h1>
-			<div class="rules">
-			<h3 class="summary"> Game Summary </h3>
-				<p> Before sitting at the blackjack table, each player must buy chips. A player must buy enough chips to, at the very least, be able to cover the minimum buy in for one hand. Each player takes a seat at the blackjack table. The dealer gives each player a two card hand, including him or herself. </p>
-			</div>
-			<div class="rules">
-
-			</div>
-			<div class="rules">
-
-			</div>
-			<div class="rules">
-
+			<div class="row">
+				<div class="col s12 m4">
+					<div class="icon-block">
+						<img src="./assets/img/024-spades.png" class="img-responsive" id="rules-img"> 
+						<h3 class="summary"> Strategy </h3>
+						<p> Winning tactics in Blackjack require that the player play each hand in the optimum way, and such strategy always takes into account what the dealer's upcard is. When the dealer's upcard is a good one, a 7, 8, 9, 10-card, or ace for example, the player should not stop drawing until a total of 17 or more is reached. When the dealer's upcard is a poor one, 4, 5, or 6, the player should stop drawing as soon as he gets a total of 12 or higher. The strategy here is never to take a card if there is any chance of going bust. The desire with this poor holding is to let the dealer hit and hopefully go over 21. Finally, when the dealer's up card is a fair one, 2 or 3, the player should stop with a total of 13 or higher.</p>
+					</div>
+				</div>
+				<div class="col s12 m4">
+					<div class="icon-block">
+						<img src="./assets/img/024-spades.png" class="img-responsive" id="rules-img"> 
+						<h3 class="summary"> Game Summary </h3>
+						<p> When all the players have placed their bets, the dealer gives one card face up to each player in rotation clockwise, and then one card face up to himself. Another round of cards is then dealt face up to each player, but the dealer takes his second card face down. Thus, each player except the dealer receives two cards face up, and the dealer receives one card face up and one card face down. If you are dealt a card that puts your hand over 21, you automatically lose. If you are under 21, you have the choice to "Hit" or "Stand". If you "Hit", the dealer deals another card to you. When a player eventually chooses to "Stay", the dealer draws a card for himself. If the dealer's card total is still under 16, the dealer is obligated to "Hit" until he is over 16 and under 21 or he busts, meaning his card total is over 21. The results of the hand is "Win", "Lose", or "Tie". You Win if your card total is closer to 21 than the dealer's. You lose if the opposite is true. And you Tie if you have the same card total that the dealer has. </p>
+					</div>
+				</div>
+				<div class="col s12 m4">
+					<div class="icon-block">
+						<img src="./assets/img/024-spades.png" class="img-responsive" id="rules-img"> 
+						<h3 class="summary"> Buying Chips </h3>
+						<p> Before sitting at the blackjack table, each player must buy chips. A player must buy enough chips to, at the very least, be able to cover the minimum buy-in for one hand. There are multiple minimum tables, ranging from $15 to $100 buy-in. Once you have the minimum amount of chips, you can sit at any blackjack table available. Before each deal begins, each player places a bet, ranging from the minimum buy-in to the maximum limit. </p>
+					</div>
+				</div>
 			</div>
 		</div>
+	</div> 	<!-- End of Jumbotron -->
+</section>
+
+<div id="footer">
+	<div class="container">
+
 	</div>
-	<!-- End of Jumbotron -->
+</div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
  crossorigin="anonymous"> </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="./assets/js/main.js"> </script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 </body>
 
 </html>
