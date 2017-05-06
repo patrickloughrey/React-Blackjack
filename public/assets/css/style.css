@@ -460,3 +460,8 @@ a:hover {
   text-align:center;
   padding-top:7%;
 }
+
+#rules {
+  color: #e6e6e6;
+  font-size: 48px;
+}

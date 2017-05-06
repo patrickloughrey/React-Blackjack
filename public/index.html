@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
 </head>
 
 <body>
@@ -28,7 +29,7 @@
 				<a href="#"> Home </a>
 			</li>
 			<li>
-				<a data-toggle="modal" data-target="#myModal"> Play </a>
+				<a data-toggle="modal" data-target="#loginModal"> Play </a>
 			</li>
 			<li>
 				<a href="#"> Rules </a>
@@ -98,7 +99,7 @@
 					    		&nbsp;&nbsp;
 					    		<span id="login_fail" class="response_error" style="display: none;">Loggin failed, please try again.</span>
 					    		<div class="clearfix"></div>
-					    		<form>
+					    		<form action="/signin" method="post">
 									<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -136,7 +137,7 @@
 					    	    &nbsp;&nbsp;
 					    	    <span id="registration_fail" class="response_error" style="display: none;">Registration failed, please try again.</span>
 					    		<div class="clearfix"></div>
-					    		<form>
+					    		<form action="/signup" method="post">
 									<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -220,7 +221,7 @@
 	<!-- Rules Jumbotron -->
 	<div class="jumbotron">
 		<div class="container">
-			<h2> Rules </h2>
+			<h1 id="rules"> Rules </h1>
 		</div>
 	</div>
 	<!-- End of Jumbotron -->
@@ -229,6 +230,7 @@
  crossorigin="anonymous"> </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="./assets/js/main.js"> </script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 </body>
 
 </html>
