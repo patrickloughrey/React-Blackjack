@@ -487,8 +487,25 @@ a:hover {
   margin-left:1%;
 }
 
-.jumbotron > p {
-  font-size:12px;
+.jumbotron p {
+  font-size:16px;
+  margin-top:8%;
 }
 
 
+/*-------------------------------*/
+/*          Footer Section       */
+/*-------------------------------*/
+
+#footer {
+  margin: 0 auto;
+  height: 100px;
+  background-color: #004d00;
+}
+
+h5 {
+  text-align:center;
+  margin-top: 4%;
+  color:white;
+  font-size:16px;
+}
